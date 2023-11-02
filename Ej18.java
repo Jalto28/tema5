@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MenuPrograma {
+public class Ej18 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
 
