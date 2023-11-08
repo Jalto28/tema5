@@ -92,29 +92,29 @@ public class Ej21 {
         return puntosCPU;
     }
 
-    public static int evaluarResultado(int puntos1, int puntos2, int limite) {
-        if (puntos1 == limite) {
-            System.out.println("\n$$$$$$$$$$$$$$$$");
-            System.out.println("$$$$ ¡ONCE! $$$$");
-            System.out.println("$$$$$$$$$$$$$$$$");
-            System.out.println("\n¡Bonificación! Doble porra");
-            return 2;
-        } else if (puntos1 > limite) {
-            System.out.println("Ohh!! Te has pasado");
-            System.out.println("Porra para la CPU");
-            return 1;
-        } else if (puntos2 > limite) {
-            System.out.println("CPU se ha pasado. Porra para Player!!");
-            return 1;
-        } else if (puntos1 > puntos2) {
-            System.out.println("CPU ha mejorado tu puntuación. Porra para CPU!!");
-            return 1;
-        } else if (puntos1 == puntos2) {
-            System.out.println("Empate!! Porra para los dos");
-            return 1;
-        }
-        return 0;
-    }
+	public static int evaluarResultado(int puntos1, int puntos2, int limite) {
+		if (puntos1 == limite && puntos2 <= limite) {
+			System.out.println("\n$$$$$$$$$$$$$$$$");
+			System.out.println("$$$$ ¡ONCE! $$$$");
+			System.out.println("$$$$$$$$$$$$$$$$");
+			System.out.println("\n¡Bonificación! Doble porra");
+			return 2;  // Jugador ha obtenido 11, se agrega una bonificación
+		} else if (puntos1 > limite && puntos2 <= limite) {
+			System.out.println("Ohh!! Te has pasado");
+			System.out.println("Porra para la CPU");
+			return 1;  // Jugador se ha pasado
+		} else if (puntos2 > limite && puntos1 <= limite) {
+			System.out.println("CPU se ha pasado. Porra para Player!!");
+			return 1;  // CPU se ha pasado
+		} else if (puntos1 > puntos2 && puntos2 <= limite) {
+			System.out.println("CPU ha mejorado tu puntuación. Porra para CPU!!");
+			return 1;  // CPU ha ganado
+		} else if (puntos1 == puntos2 && puntos1 <= limite) {
+			System.out.println("Empate!! Porra para los dos");
+			return 1;  // Empate
+		}
+		return 0;  // Ninguno de los casos anteriores
+	}
 
     public static void mostrarPuntuacion(int porrasPlayer, int porrasCPU) {
         System.out.println("\n**********************");
