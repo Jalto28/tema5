@@ -100,8 +100,7 @@ public class Ej21 {
 			System.out.println("\n¡Bonificación! Doble porra");
 			return 2;  // Jugador ha obtenido 11, se agrega una bonificación
 		} else if (puntos1 > limite && puntos2 <= limite) {
-			System.out.println("Ohh!! Te has pasado");
-			System.out.println("Porra para la CPU");
+			System.out.println("Ohh!! Te has pasado. Porra para la CPU");			
 			return 1;  // Jugador se ha pasado
 		} else if (puntos2 > limite && puntos1 <= limite) {
 			System.out.println("CPU se ha pasado. Porra para Player!!");
